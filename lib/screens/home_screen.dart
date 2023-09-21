@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tab_bar/screens/custom_tabBar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,6 +11,7 @@ class HomeScreen extends StatelessWidget {
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: const Text('TabBar'),
           bottom: const TabBar(
             tabs: [
@@ -32,6 +34,52 @@ class HomeScreen extends StatelessWidget {
             ],
             ),
         ),
+        body: const TabBarView(
+          children: [
+              Center(
+                child: Text(
+                  'This is TabBar 1',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  ),
+                ),
+              Center(
+                child: Text(
+                  'This is TabBar 2',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  ),
+                ),
+              Center(
+                child: Text(
+                  'This is TabBar 3',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  ),
+                ),
+              Center(
+                child: Text(
+                  'This is TabBar 4',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  ),
+                ),      
+          ]),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(context, 
+            MaterialPageRoute(builder: (context) => const CustomTabBar()));
+          },
+          child: const Icon(Icons.navigate_next_sharp),
+           ),  
       ),
     );
   }
